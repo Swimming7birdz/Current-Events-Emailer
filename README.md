@@ -1,1 +1,1 @@
-# cureeent-Events-Emailer
+# Current-Events-Emailer
