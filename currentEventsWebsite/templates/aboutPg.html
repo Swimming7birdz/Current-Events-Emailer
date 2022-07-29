@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<style>
+  h1 {
+    text-align: center;
+    background: white;
+    mix-blend-mode: screen;
+    font-size: 10vw;
+    font-family: Work Sans, Tahoma, sans-serif;
+    opacity: 0.95;
+    margin-top: 125px;
+    margin-bottom: 75px;
+    padding: 20px;
+  }
+
+  span {
+    background-image: url({{url_for('static',filename='newsImages/news1.jpg')}});
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: block;
+  }
+
+  .baseText {
+    text-align: center;
+    font-family: Poppins, Tahoma, sans-serif;
+    background: black;
+    color: white;
+    font-size: 2.5vw;
+    padding: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 250px;
+    margin-top: 150px;
+    opacity: 0.6;
+  }
+
+</style>
+
+{% endblock %}
+
+{% block body %}
+<h1><span> About </span></h1>
+
+<div class = "baseText">
+  <p>This site allows you to easily and quickly send emails with current headlines from GoogleNews</div>
+<br> </br>
+
+{% endblock %}

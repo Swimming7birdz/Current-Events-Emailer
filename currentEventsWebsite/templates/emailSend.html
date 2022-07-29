@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<style>
+  h1 {
+  text-align: center;
+  background: white;
+  mix-blend-mode: screen;
+  font-size: 10vw;
+  font-family: Work Sans, Tahoma, sans-serif;
+  opacity: 0.95;
+  margin-top: 125px;
+  margin-bottom: 125px;
+  padding: 20px;
+  }
+
+  span {
+    background-image: url({{url_for('static',filename='newsImages/news1.jpg')}});
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: block;
+  }
+
+  .baseText {
+    text-align: center;
+    color:white;
+    box-sizing: border-box;
+    font-size: 4vw;
+    font-family: Helvetica, Tahoma, sans-serif;
+    margin-bottom: 150px;
+    margin-top: 50px;
+  }
+
+  form {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 150px;
+    font-family: Poppins, sans-serif;
+  }
+</style>
+
+{% endblock %}
+
+
+{% block body %}
+<h1> <span> Email </span> </h1>
+
+  <form action = "emailSend", method = "post">
+
+    <div class = "baseText"> <p> Enter an email address: </p> </div>
+    {{ form.csrf_token }}
+    {{ form.email.label (class = "form-label")}}
+    {{ form.email (class = "input-lg", placeholder = "Email", size = 45)}}
+
+    <br>
+    <br>
+    <br>
+    {{ form.submit (class = "btn btn-primary")}}
+  </form>
+{% endblock %}

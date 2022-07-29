@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+<style>
+  h1 {
+    text-align: center;
+    background: white;
+    mix-blend-mode: screen;
+    font-size: 7vw;
+    font-family: Work Sans, Tahoma, sans-serif;
+    opacity: 0.95;
+    margin-top: 125px;
+    margin-bottom: 75px;
+    padding: 20px;
+  }
+
+  span {
+    background-image: url({{url_for('static',filename='newsImages/news1.jpg')}});
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: block;
+  }
+
+  .baseText {
+    text-align: center;
+    color:white;
+    box-sizing: border-box;
+    font-size: 4vw;
+    font-family: Poppins, Tahoma, sans-serif;
+    margin-bottom: 100px;
+    margin-top: 150px;
+    margin-right: 35px
+    margin-left: 35px
+  }
+
+  form {
+    text-align: center;
+    margin-bottom: 150px;
+    font-family: Poppins, sans-serif;
+  }
+</style>
+{% endblock %}
+
+
+{% block body %}
+<h1><span> Unlimited Search </span></h1>
+
+<form action = "optionOne", method = "post">
+  <br>
+  <br>
+  {{ form.csrf_token }}
+  <div class = "baseText">
+    <p> Enter your search </p>
+  </div>
+  {{ form.search.label (class = "form-label")}}
+  {{ form.search (class = "input-lg", placeholder="Search", size = 25)}}
+  <br/> <br/> <br/>
+  {{ form.submit (class = "btn btn-primary")}}
+</form>
+{% endblock %}

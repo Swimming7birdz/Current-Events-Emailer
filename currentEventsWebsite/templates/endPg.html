@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<style>
+  h1 {
+    text-align: center;
+    background: white;
+    mix-blend-mode: screen;
+    font-size: 10vw;
+    font-family: Work Sans, Tahoma, sans-serif;
+    opacity: 0.95;
+    margin-top: 125px;
+    margin-bottom: 75px;
+    padding: 20px;
+  }
+
+  span {
+    background-image: url({{url_for('static',filename='newsImages/news1.jpg')}});
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: block;
+  }
+
+  .baseText {
+    text-align: center;
+    font-family: Poppins, Tahoma, sans-serif;
+    background: white;
+    color: black;
+    font-size: 2vw;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 35px;
+    margin-left: 35px;
+    margin-bottom: 150px;
+    opacity: 0.75;
+  }
+
+  form {
+    text-align: center;
+    font-family: Poppins;
+    margin-top: 25px;
+    margin-bottom: 200px;
+  }
+
+  input{
+    margin-top: 15px;
+  }
+
+</style>
+{% endblock %}
+
+
+{% block body %}
+<h1> <span> Success! </span></h1>
+
+<div class = "baseText"> <p> You should be receiving your news update in your email now </p> </div>
+<form action = 'endPg' method = 'post'>
+  <p><input type = "submit" class ="btn btn-primary" name = "submit_button" value="Home"/></p>
+  <p><input type = "submit" class ="btn btn-primary" name = "submit_button" value="Questions Page"/></p>
+  <p><input type = "submit" class ="btn btn-primary" name = "submit_button" value="Restart"/></p>
+</form>
+{% endblock %}

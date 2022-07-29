@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+<style>
+  h1 {
+    text-align: center;
+    background: white;
+    mix-blend-mode: screen;
+    font-size: 10vw;
+    font-family: Work Sans, Tahoma, sans-serif;
+    opacity: 0.95;
+    margin-top: 125px;
+    margin-bottom: 125px;
+    padding: 25px;
+    color:transparent;
+  }
+
+  span{
+    background-image: url({{url_for('static',filename='newsImages/news1.jpg')}});
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: block;
+  }
+
+  
+  .baseText {
+    text-align: center;
+    color:white;
+    box-sizing: border-box;
+    font-size: 4vw;
+    font-family: Poppins, Tahoma, sans-serif;
+    margin-bottom: 40px;
+    margin-top: 100px;
+  }
+  form {
+    text-align: center;
+    margin-bottom: 150px;
+    font-family: Poppins, sans-serif;
+  }
+</style>
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+{% for message in get_flashed_messages() %}{{ message }}<br/>
+{% endfor %}
+
+
+<h1><span> Let's get started </span></h1>
+
+  <div class = "baseText">
+    <p> Please enter your name </p>
+  </div>
+
+  <form action = "mainPg", method = "POST">
+    {{ form.csrf_token }}
+    {{ form.username.label (class = "form-label")}}
+    {{ form.username (class = "input-lg", placeholder="Name", size = 25)}}
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    {{ form.submit (class = "btn btn-primary")}}
+  </form>
+
+{% endblock %}
+<!--
+placeholder="Readonly input here…" readonly
+
+class="form-control form-control-lg" type="text" placeholder=".form-control-lg"
+
+
+  -->

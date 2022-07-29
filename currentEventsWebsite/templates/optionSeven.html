@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+<style>
+  h1 {
+    text-align: center;
+    background: white;
+    mix-blend-mode: screen;
+    font-size: 7vw;
+    font-family: Work Sans, sans-serif;
+    opacity: 0.95;
+    margin-top: 125px;
+    margin-bottom: 75px;
+    padding: 20px;
+  }
+
+  span {
+    background-image: url({{url_for('static',filename='newsImages/news1.jpg')}});
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: block;
+  }
+
+  .baseText {
+    text-align: center;
+    color:white;
+    box-sizing: border-box;
+    font-size: 4vw;
+    font-family: Poppins, Tahoma, sans-serif;
+    margin-bottom: 100px;
+    margin-top: 150px;
+    margin-right: 35px
+    margin-left: 35px
+  }
+
+  form {
+    text-align: center;
+    margin-bottom: 150px;
+    font-family: Poppins, sans-serif;
+  }
+</style>
+{% endblock %}
+
+
+{% block body %}
+<h1><span> Limited Topic Headlines </span></h1>
+
+<form action = "optionSeven", method = "post">
+  {{ form.csrf_token (class = "form-label")}}
+  <div class = "baseText">
+    <p> Enter your topic </p>
+  </div>
+  {{ form.topic.label }}
+  {{ form.topic (class = "input-lg")}}
+  <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+  <div class = "baseText">
+    <p> Enter the number of articles </p>
+  </div>
+  {{ form.number.label (class = "form-label")}}
+  {{ form.number (class = "input-lg", placeholder = "Number of articles")}}
+  <br/> <br/> <br/>
+  {{ form.submit (class = "btn btn-primary")}}
+</form>
+{% endblock %}

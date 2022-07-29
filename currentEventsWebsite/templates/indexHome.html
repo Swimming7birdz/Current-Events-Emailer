@@ -1,0 +1,102 @@
+{% extends "base.html"%}
+
+{% block head %}
+
+<style>
+  h1 {
+    text-align: center;
+    background-color: #fff;
+    color: transparent;
+    font-size: 8.7vw;
+    font-family: Libre Baskerville, Work Sans, sans-serif;
+    padding-top: 5px;
+    padding-right: 7px;
+    padding-left: 7px;
+    padding-bottom: 30px;
+    margin-top: 0;
+    margin-right: 27px;
+    margin-left: 27px;
+    opacity: 0.9;
+  }
+
+  span{
+    background-image: url({{url_for('static',filename='newsImages/news1.jpg')}});
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: block;
+  }
+
+  h2 {
+    text-align: center;
+    background-color: white;
+    color: transparent;
+    mix-blend-mode: screen;
+    font-size: 7vw;
+    font-family: Libre Baskerville, Work Sans, sans-serif;
+    opacity: 0.9;
+    padding-top: 30px;
+    padding-right: 7px;
+    padding-left: 7px;
+    padding-bottom: 5px;
+    margin-top: 175px;
+    margin-right: 27px;
+    margin-left: 27px;
+    margin-bottom: 0;
+  }
+
+  .baseText {
+    text-align: center;
+    color: white;
+    font-family: Poppins, Tahoma, sans-serif;
+    box-sizing: border-box;
+    font-size: 4vw;
+    margin-bottom: 300px;
+    margin-top: 300px;
+  }
+
+  .formText {
+    text-align: center;
+    color: white;
+    font-family: Poppins, Tahoma, sans-serif;
+    font-size: 3vw;
+  }
+
+  .button{
+    text-align: center;
+    font-size: 2vw;
+    margin-bottom: 175px;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+
+
+  <h2> <span> The </span> </h2>
+  <h1> <span> Current Events <br/> Emailer </span> </h1>
+
+
+
+  <br/>
+  <br/>
+
+  <div class = "baseText">
+    <p> Here you can email headlines <br/> from Google News </p>
+  </div>
+
+
+    <form action = '/' method = 'post'>
+        <div class = "formText">
+          <p> To begin please click here </p>
+        </div>
+
+        <br/>
+
+        <div class = "button"
+          <p><input type = "submit" class ="btn btn-primary" name = "submit_button" value="Begin"/></p>
+        </div>
+
+    </form>
+
+
+{%endblock%}
