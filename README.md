@@ -1,2 +1,2 @@
 # Current-Events-Emailer
-This website allows users to request how they want their news (from GoogleNews), and in what language (English, Spanish, French, or Italian). It also asks for an email. All the titles, publishing dates, and links to the news articles are sent to that email address in the requested language.
+Developed an Html/Python/SQL app that uses a webscraper library to send users tailored newsarticles. Website was designed in HTML to be visually appealing, while maintaining a smooth page flow. Uses Flask to collect user info and Courier to send emails. App utilizes PostgreSQL database to store user info.
